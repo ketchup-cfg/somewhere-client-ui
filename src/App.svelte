@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from 'svelte';
+  import {onMount} from 'svelte';
 
   let baseUrl = 'http://localhost:5018/api';
   let topics = [];
@@ -15,22 +15,29 @@
   });
 </script>
 
-<h1>Forum Topics</h1>
-<ul>
-  {#each topics as topic}
-    <li>
-      <a
-        href="{baseUrl}/topics/{topic.name}"
-        title="{topic.name}"
-        target="_blank"
-      >
-        {topic.name}
-      </a>
-    </li>
-  {:else}
-    <li>loading topics...</li>
-  {/each}
-</ul>
+<header>
+  <h1>Forum Topics</h1>
+</header>
+
+<main>
+  <nav>
+    <ul>
+      {#each topics as topic}
+        <li>
+          <a
+            href="{baseUrl}/topics/{topic.name}"
+            title="{topic.name}"
+            target="_blank"
+          >
+            {topic.name}
+          </a>
+        </li>
+      {:else}
+        <li>loading topics...</li>
+      {/each}
+    </ul>
+  </nav>
+</main>
 
 <style>
 </style>
