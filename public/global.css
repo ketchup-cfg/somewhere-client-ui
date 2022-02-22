@@ -1,3 +1,16 @@
 /*
  This is where I would put my global CSS... IF I HAD ANY
  */
+html {
+  background-color: #1C1E26;
+  box-sizing: border-box;
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #C8D3F5;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
