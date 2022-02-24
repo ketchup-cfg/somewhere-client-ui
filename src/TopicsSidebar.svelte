@@ -5,19 +5,21 @@
   let topics = [];
 
   onMount(async () => {
-    const res = await fetch(`${baseUrl}/topics`,
+    fetch(`${baseUrl}/topics`,
       {
         headers: {
           "Accept": "application/json"
         }
-      });
-    topics = await res.json();
+      })
+      .then(response => response.json())
+      .then(response => topics = response)
+      .catch((error) => console.error('Error:', error));
   });
 </script>
 
 <nav>
-  <h1>Forum Topics</h1>
-  <ul>
+  <h1>Browse Forum Topics</h1>
+  <menu class="pl-5 space-y-3 text-slate-400 dark:text-white">
     {#each topics as topic}
       <li>
         <a
@@ -25,29 +27,14 @@
           title="{topic.name}"
           target="_blank"
         >
-          {topic.name}
+          + {topic.name}
         </a>
       </li>
     {:else}
       <li>loading topics...</li>
     {/each}
-  </ul>
+  </menu>
 </nav>
 
 <style>
-  nav {
-    display: inline-block;
-  }
-
-  ul {
-    list-style-type: " + ";
-  }
-
-  li {
-    border: 1px solid black;
-  }
-
-  a:hover {
-    text-decoration: none;
-  }
 </style>
