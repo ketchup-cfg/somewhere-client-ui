@@ -23,11 +23,19 @@
       })
       .catch((error) => console.error('Error:', error));
   });
+
+  document.onclick = function(e) {
+    if (!document.getElementById("topics-sidebar")?.contains(e.target as Node)
+    && !document.getElementById("show-topics-sidebar-button")?.contains(e.target as Node)) {
+      toggleSidebar();
+    }
+  }
 </script>
 
-<div class="fixed top-4 left-4 z-10 rounded drop-shadow-2xl w-80 max-w-[calc(100%-3rem)] p-6 dark:bg-slate-800 ">
+<div id="topics-sidebar" class="fixed top-4 left-4 z-10 rounded drop-shadow-2xl w-80 max-w-[calc(100%-3rem)] p-6 dark:bg-slate-800 ">
     <h1 class="inline">Browse Forum Topics</h1>
     <button
+      id="close-topics-sidebar-button"
       class="bg-inherit float-right"
       on:click={toggleSidebar}
     >
