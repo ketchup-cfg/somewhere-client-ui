@@ -19,7 +19,7 @@
   <div class="relative top-4 left-4 z-0">
     <main>
       {#if !shouldShowTopicSidebar}
-        <div class="fixed bottom-4 left-4" transition:fly="{{ y: 200, duration: 300 }}">
+        <div class="visible md:invisible fixed bottom-4 left-4" transition:fly="{{ y: 200, duration: 300 }}">
           <button
             id="show-topics-sidebar-button"
             class="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300 text-white font-bold py-2 px-4 rounded drop-shadow-2xl"
