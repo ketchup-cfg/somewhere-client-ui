@@ -25,21 +25,15 @@
   });
 </script>
 
-<div class="fixed top-4 left-4 z-10 bg-blue-500 rounded shadow-lg p-1 m-1 w-fit">
+<div class="fixed top-4 left-4 z-10 rounded shadow-lg w-80 max-w-[calc(100%-3rem)] p-6 dark:bg-slate-800 ">
+    <h1 class="inline">Browse Forum Topics</h1>
+    <button
+      class="bg-inherit float-right"
+      on:click={toggleSidebar}
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
   <nav>
-    <div class="relative grid grid-cols-3 p-1">
-      <div class="col-start-2 col-end-2 justify-self-center">
-        <h1>Browse Forum Topics</h1>
-      </div>
-      <div class="col-start-3 col-end-3 justify-self-end">
-        <button
-          class="bg-inherit text-white font-bold rounded"
-          on:click={toggleSidebar}
-        >
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-    </div>
     <ul class="pl-5 space-y-1 text-slate-400 dark:text-white">
       {#each topics as topic}
         <li>
