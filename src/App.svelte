@@ -21,7 +21,7 @@
       {#if !shouldShowTopicSidebar}
         <div class="fixed bottom-4 left-4" transition:fly="{{ y: 200, duration: 300 }}">
           <button
-            class="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300 text-white font-bold py-2 px-4 rounded"
+            class="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300 text-white font-bold py-2 px-4 rounded drop-shadow-2xl"
             on:click={toggleSidebar}
           >
             <i class="fa-solid fa-bars"></i>
@@ -29,9 +29,9 @@
         </div>
       {/if}
 
-      <div class="fixed bottom-4 right-4">
+      <div class="fixed bottom-4 right-4 {shouldShowTopicSidebar ? 'blur-sm' : ''}">
         <button
-          class="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300 text-white font-bold py-2 px-4 rounded"
+          class="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300 text-white font-bold py-2 px-4 rounded drop-shadow-2xl"
           on:click={() => console.log("Just some stuff")}
         >
           <i class="fa-solid fa-pen"></i>

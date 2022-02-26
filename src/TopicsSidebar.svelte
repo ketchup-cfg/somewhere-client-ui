@@ -25,7 +25,7 @@
   });
 </script>
 
-<div class="fixed top-4 left-4 z-10 rounded shadow-lg w-80 max-w-[calc(100%-3rem)] p-6 dark:bg-slate-800 ">
+<div class="fixed top-4 left-4 z-10 rounded drop-shadow-2xl w-80 max-w-[calc(100%-3rem)] p-6 dark:bg-slate-800 ">
     <h1 class="inline">Browse Forum Topics</h1>
     <button
       class="bg-inherit float-right"
