@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
+    "build": "npx tailwindcss -i ./public/global.css -o ./public/build/bundle.css && rollup -c",
+    "dev": "npx tailwindcss -i ./public/global.css -o ./public/build/bundle.css && rollup -c -w",
     "start": "sirv public --no-clear",
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
