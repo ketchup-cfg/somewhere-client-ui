@@ -11,62 +11,37 @@
 
 <div class="flex">
 
-  <header class="invisible md:visible">
-    {#if !shouldShowTopicSidebar}
-      <div class="fixed top-4 left-4" transition:fly="{{ y: -200, duration: 300 }}">
+  <nav id="forum-navbar" class="fixed bottom-0 md:top-0 bg-slate-700 h-16 p-4 w-screen">
+    <ul>
+      <li class="inline-block float-left left-4">
         <button
-          id="show-topics-sidebar-header-button"
-          class="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300 text-white font-bold py-2 px-4 rounded drop-shadow-2xl"
+          id="show-sidebar-button"
+          class="bg-inherit hover:bg-slate-800 active:bg-slate-900 focus:outline-none focus:ring focus:ring-slate-300 text-white font-bold py-2 px-4 rounded drop-shadow-2xl"
           on:click={toggleSidebar}
         >
           <i class="fa-solid fa-bars"></i>
         </button>
-      </div>
-    {/if}
+        {#if shouldShowTopicSidebar}
+          <div transition:fly="{{ x: -200, duration: 300 }}">
+            <TopicsSidebar bind:shouldShowTopicSidebar/>
+          </div>
+        {/if}
+      </li>
 
-    <div class="fixed md:top-4 right-4 {shouldShowTopicSidebar ? 'blur-sm' : ''}">
-      <button
-        class="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300 text-white font-bold py-2 px-4 rounded drop-shadow-2xl"
-        on:click={() => console.log("Just some stuff")}
-      >
-        <i class="fa-solid fa-pen"></i>
-      </button>
-    </div>
-  </header>
-
-  {#if shouldShowTopicSidebar}
-    <div transition:fly="{{ x: -200, duration: 300 }}">
-      <TopicsSidebar bind:shouldShowTopicSidebar/>
-    </div>
-  {/if}
-
-  <div class="relative top-4 left-4 z-0">
-    <main>
-    </main>
-  </div>
-
-  <footer class="visible md:invisible">
-    {#if !shouldShowTopicSidebar}
-      <div class="fixed bottom-4 left-4" transition:fly="{{ y: 200, duration: 300 }}">
+      <li class="inline-block float-right">
         <button
-          id="show-topics-sidebar-footer-button"
-          class="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300 text-white font-bold py-2 px-4 rounded drop-shadow-2xl"
-          on:click={toggleSidebar}
+          class="bg-inherit hover:bg-slate-800 active:bg-slate-900 focus:outline-none focus:ring focus:ring-slate-300 text-white font-bold py-2 px-4 rounded drop-shadow-2xl"
+          on:click={() => console.log("Just some stuff")}
         >
-          <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-pen"></i>
         </button>
-      </div>
-    {/if}
+      </li>
+    </ul>
+  </nav>
 
-    <div class="fixed bottom-4 right-4 {shouldShowTopicSidebar ? 'blur-sm' : ''}">
-      <button
-        class="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300 text-white font-bold py-2 px-4 rounded drop-shadow-2xl"
-        on:click={() => console.log("Just some stuff")}
-      >
-        <i class="fa-solid fa-pen"></i>
-      </button>
-    </div>
-  </footer>
+  <main>
+  </main>
+
 </div>
 
 <style>

@@ -26,8 +26,7 @@
 
   function handleWindowClick(e) {
     if (!document.querySelector("#topics-sidebar")?.contains(e.target as Node)
-      && !document.querySelector("#show-topics-sidebar-header-button")?.contains(e.target as Node)
-      && !document.querySelector("#show-topics-sidebar-footer-button")?.contains(e.target as Node)) {
+      && !document.querySelector("#show-sidebar-button")?.contains(e.target as Node)) {
       toggleSidebar();
     }
   }
@@ -35,17 +34,16 @@
 
 <svelte:window on:click={handleWindowClick}/>
 
-<div id="topics-sidebar" class="fixed top-4 left-4 z-10 rounded drop-shadow-2xl w-80 max-w-[calc(100%-3rem)] p-6 dark:bg-slate-800 ">
-    <h1 class="inline">Browse Forum Topics</h1>
+<div id="topics-sidebar" class="relative mb-5 md:mt-5 z-10 rounded drop-shadow-2xl w-80 max-w-[calc(100%-3rem)] p-6 bg-slate-700 text-white">
+  <h1 class="inline">Browse Forum Topics</h1>
     <button
-      id="close-topics-sidebar-button"
       class="bg-inherit float-right"
       on:click={toggleSidebar}
     >
       <i class="fa-solid fa-xmark"></i>
     </button>
   <nav>
-    <ul class="pl-5 space-y-1 text-slate-400 dark:text-white">
+    <ul class="pl-5 space-y-1">
       {#each topics as topic}
         <li>
           <a
