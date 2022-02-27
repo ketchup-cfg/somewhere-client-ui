@@ -12,13 +12,19 @@
 
   <nav id="forum-navbar" class="tm-0 bg-slate-700 h-16 p-4 w-screen">
     <ul>
-      <li class="inline-block float-left left-4">
+      <li class="inline-block relative float-left left-4">
         <button
+          id="show-topics-sidebar-button"
           class="bg-inherit hover:bg-slate-800 active:bg-slate-900 focus:outline-none focus:ring focus:ring-slate-300 text-white font-bold py-2 px-4 rounded drop-shadow-2xl"
           on:click={toggleSidebar}
         >
-          <i class="fa-solid fa-bars"></i>
+          Topics <i class="fa-solid fa-caret-down"></i>
         </button>
+        {#if shouldShowTopicSidebar}
+          <div transition:fly="{{ x: -200, duration: 300 }}">
+            <TopicsSidebar bind:shouldShowTopicSidebar/>
+          </div>
+        {/if}
       </li>
 
       <li class="inline-block float-right">
@@ -31,12 +37,6 @@
       </li>
     </ul>
   </nav>
-
-  {#if shouldShowTopicSidebar}
-    <div transition:fly="{{ x: -200, duration: 300 }}">
-      <TopicsSidebar bind:shouldShowTopicSidebar/>
-    </div>
-  {/if}
 
   <main class="flex">
     <p class="{shouldShowTopicSidebar ? 'blur' : ''}">stuff</p>
