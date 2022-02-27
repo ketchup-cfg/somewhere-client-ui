@@ -10,7 +10,7 @@
 </script>
 
 
-  <nav id="forum-navbar" class="bm-0 md:tm-0 bg-slate-700 h-16 p-4 w-screen">
+  <nav id="forum-navbar" class="tm-0 bg-slate-700 h-16 p-4 w-screen">
     <ul>
       <li class="inline-block float-left left-4">
         <button
