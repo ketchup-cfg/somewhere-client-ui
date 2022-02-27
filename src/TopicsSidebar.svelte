@@ -34,7 +34,7 @@
 
 <svelte:window on:click={handleWindowClick}/>
 
-<div id="topics-sidebar" class="fixed mb-16 md:mt-16 z-10 rounded-t md:rounded-t-none md:rounded-b drop-shadow-2xl w-80 max-w-[calc(100%-3rem)] p-6 bg-slate-500 text-white">
+<div id="topics-sidebar" class="fixed bottom-16 md:bottom-auto md:top-16 z-10 rounded-t md:rounded-t-none md:rounded-b drop-shadow-2xl w-80 max-w-[calc(100%-3rem)] p-6 bg-slate-500 text-white">
   <h1 class="inline">Browse Forum Topics</h1>
     <button
       class="bg-inherit float-right"
