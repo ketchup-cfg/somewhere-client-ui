@@ -1,46 +1,12 @@
 <script lang="ts">
-  import {fly} from 'svelte/transition';
-  import TopicsSidebar from "./TopicsSidebar.svelte";
-
-  let shouldShowTopicSidebar = false;
-
-  function toggleSidebar() {
-    shouldShowTopicSidebar = !shouldShowTopicSidebar;
-  }
+  import Navbar from "./components/navigation/Navbar.svelte";
 </script>
 
+<Navbar />
 
-  <nav id="forum-navbar" class="tm-0 bg-slate-700 h-16 p-4 w-screen">
-    <ul>
-      <li class="inline-block relative float-left left-4">
-        <button
-          id="show-topics-sidebar-button"
-          class="bg-inherit hover:bg-slate-800 active:bg-slate-900 focus:outline-none focus:ring focus:ring-slate-300 text-white font-bold py-2 px-4 rounded drop-shadow-2xl"
-          on:click={toggleSidebar}
-        >
-          Topics <i class="fa-solid fa-caret-down"></i>
-        </button>
-        {#if shouldShowTopicSidebar}
-          <div transition:fly="{{ x: -200, duration: 300 }}">
-            <TopicsSidebar bind:shouldShowTopicSidebar/>
-          </div>
-        {/if}
-      </li>
-
-      <li class="inline-block float-right">
-        <button
-          class="bg-inherit hover:bg-slate-800 active:bg-slate-900 focus:outline-none focus:ring focus:ring-slate-300 text-white font-bold py-2 px-4 rounded drop-shadow-2xl"
-          on:click={() => console.log("Just some stuff")}
-        >
-          <i class="fa-solid fa-pen"></i>
-        </button>
-      </li>
-    </ul>
-  </nav>
-
-  <main class="flex">
-    <p class="{shouldShowTopicSidebar ? 'blur' : ''}">stuff</p>
-  </main>
+<section class="section">
+  <h1 class="title">Stuff</h1>
+</section>
 
 
 <style>

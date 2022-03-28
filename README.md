@@ -1,20 +1,20 @@
-# Forum-UI
+# somewhere-client-ui
 
-A front-end user interface for the forum-api application created using Svelte.js.
+A front-end user interface for the forum-api application created using Svelte.
 
 ## Building
 
-This application is build with Svelte.js and uses Tailwind CSS for styling.
+This application is build with Svelte and uses Bulma for styling.
 
-In order to build this application, first run the following command to build the CSS for the application:
-
-```bash
-npx tailwindcss -i ./public/global.css -o ./public/build/bundle.css
-```
-
-Then run this command to build the application with the built CSS applied to it:
+In order to run this application, first run the following command to compile the application:
 
 ```bash
 npm run build
+```
+
+Then run this command to run the application:
+
+```bash
+npm run start
 ```
 
